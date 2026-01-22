@@ -19,7 +19,8 @@ http.route({
 		const svixTimestamp = request.headers.get("svix-timestamp");
 		const svixSignature = request.headers.get("svix-signature");
 
-		if (!svixId || !svixTimestamp || !svixSignature) {
+		const hasSvixHeaders = svixId && svixTimestamp && svixSignature;
+		if (!hasSvixHeaders) {
 			return new Response("Missing svix headers", { status: 400 });
 		}
 

@@ -8,16 +8,20 @@ export function useStoreUser() {
 	const upsertUser = useMutation(api.users.upsertUser);
 
 	useEffect(() => {
-		if (!(isLoaded && user)) return;
+		if (!(isLoaded && user)) {
+			return;
+		}
 
 		const email = user.primaryEmailAddress?.emailAddress;
-		if (!email) return;
+		if (!email) {
+			return;
+		}
 
 		upsertUser({
 			email,
 			name: user.fullName ?? undefined,
 			imageUrl: user.imageUrl ?? undefined,
-		}).catch((err) => {
+		}).catch((err: unknown) => {
 			// Log error but don't crash - user sync is best effort
 			console.error("Failed to sync user to Convex:", err);
 		});

@@ -1,23 +1,24 @@
 import { UserButton } from "@clerk/tanstack-react-start";
+import { convexQuery } from "@convex-dev/react-query";
+import { api } from "@my-better-t-app/backend/convex/_generated/api";
+import { useSuspenseQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useCurrentUser } from "@/hooks/use-current-user";
 
-export const Route = createFileRoute("/_protected/dashboard")({
+export const Route = createFileRoute("/_authed/dashboard")({
 	component: DashboardPage,
+	loader: async ({ context }) => {
+		await context.queryClient.ensureQueryData(
+			convexQuery(api.users.getCurrentUser, {})
+		);
+	},
 });
 
 function DashboardPage() {
-	const { data: user, isLoading } = useCurrentUser();
-
-	if (isLoading) {
-		return (
-			<div className="flex items-center justify-center py-12">
-				<div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
-			</div>
-		);
-	}
+	const { data: user } = useSuspenseQuery(
+		convexQuery(api.users.getCurrentUser, {})
+	);
 
 	return (
 		<div className="container mx-auto space-y-6 px-4 py-6">
