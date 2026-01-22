@@ -1,0 +1,27 @@
+role: "apex-researcher"
+objective:
+  task: "Fix QA errors across 6 identified files"
+  context: "Portal Grupo US - React/Convex Stack. QA phase cleanup."
+chain_of_thought_process:
+  analyze:
+    checklist:
+      - "Core requirement: Eliminate 'as any', remove console.logs, address TODOs."
+      - "Technical constraints: Maintain strict type safety, do not break existing logic."
+      - "Expected output: 6 modified files passing 'bun run lint' and 'bun run build'."
+      - "Edge cases: useUserSync arguments must match API definition."
+  research:
+    checklist:
+      - "Files: src/components/students/create-payment-dialog.tsx, src/routes/_authenticated/financial.tsx, src/hooks/useUserSync.ts, src/routes/_authenticated/chat.tsx, src/lib/xlsx-helper.ts, src/routes/_authenticated/marketing/$campaignId.tsx"
+      - "Patterns: TypeScript strict mode, clean console output."
+      - "Security: No sensitive data in logs (removed anyway)."
+  think:
+    step_by_step:
+      - "First: Create spec file detailing specific changes per file."
+      - "Then: Generate atomic tasks for implementation."
+      - "Next: Verify strict type compliance for Convex mutations."
+      - "Finally: Validate with lint and build."
+complexity: "L2 - Simple Cleanup"
+key_findings:
+  - finding: "create-payment-dialog.tsx uses 'as any' to bypass type checks."
+  - finding: "Multiple files contain 'console.log' which violates lint rules."
+  - finding: "useUserSync.ts passes incorrect number of arguments to useQuery."

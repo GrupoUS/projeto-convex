@@ -1,0 +1,134 @@
+[
+	{
+		"id": "AT-003",
+		"content": "[AT-003] Implement E2E Tests for Student Creation | Phase: 3 | Files: tests/e2e/student-flow.spec.ts, src/components/students/student-form.tsx",
+		"status": "completed",
+		"priority": "high"
+	},
+	{
+		"id": "AT-101",
+		"content": "[AT-101] Remove admin backdoor override | Phase: 3 | Files: convex/lib/securityMiddleware.ts",
+		"status": "completed",
+		"priority": "high"
+	},
+	{
+		"id": "AT-101-A",
+		"content": "  ↳ [AT-101-A] Delete hardcoded Clerk userId -> admin role logic",
+		"status": "completed",
+		"priority": "high"
+	},
+	{
+		"id": "AT-101-B",
+		"content": "  ↳ [AT-101-B] Ensure role derived from authenticated user record/claims only",
+		"status": "completed",
+		"priority": "high"
+	},
+	{
+		"id": "AT-102",
+		"content": "[AT-102] Remove auth/identity debug logging | Phase: 3 | Files: convex/lib/securityMiddleware.ts",
+		"status": "completed",
+		"priority": "high"
+	},
+	{
+		"id": "AT-102-A",
+		"content": "  ↳ [AT-102-A] Remove console.log/DEBUG statements in request security context path",
+		"status": "completed",
+		"priority": "high"
+	},
+	{
+		"id": "AT-103",
+		"content": "[AT-103] Lock down or remove admin bootstrap mutation | Phase: 3 | Files: convex/fix_admin.ts",
+		"status": "completed",
+		"priority": "high"
+	},
+	{
+		"id": "AT-103-A",
+		"content": "  ↳ [AT-103-A] Convert to internal-only function or remove file if unused",
+		"status": "completed",
+		"priority": "high"
+	},
+	{
+		"id": "AT-103-B",
+		"content": "  ↳ [AT-103-B] If kept: gate by env flag + strict allowlist + audit log",
+		"status": "completed",
+		"priority": "high"
+	},
+	{
+		"id": "AT-104",
+		"content": "[AT-104] Remove committed Context7 API key | Phase: 1 | Files: .kilocode/mcp.json",
+		"status": "completed",
+		"priority": "high"
+	},
+	{
+		"id": "AT-104-A",
+		"content": "  ↳ [AT-104-A] Replace key with placeholder and document env var usage",
+		"status": "completed",
+		"priority": "high"
+	},
+	{
+		"id": "AT-104-B",
+		"content": "  ↳ [AT-104-B] Add ignore/secret scanning guidance (no history rewrite here)",
+		"status": "completed",
+		"priority": "medium"
+	},
+	{
+		"id": "AT-105",
+		"content": "[AT-105] Fix failing unit tests deterministically | Phase: 2 | Files: src/components/crm/pipeline-kanban.test.tsx, related components",
+		"status": "completed",
+		"priority": "high"
+	},
+	{
+		"id": "AT-105-A",
+		"content": "  ↳ [AT-105-A] Run bun tests, isolate first failure, apply minimal fix",
+		"status": "completed",
+		"priority": "high"
+	},
+	{
+		"id": "AT-106",
+		"content": "[AT-106] Fix type-safety issues in team report route | Phase: 3 | Files: src/routes/_authenticated/reports/team.tsx",
+		"status": "completed",
+		"priority": "medium"
+	},
+	{
+		"id": "AT-106-A",
+		"content": "  ↳ [AT-106-A] Replace any with typed interfaces/Convex return types",
+		"status": "completed",
+		"priority": "medium"
+	},
+	{
+		"id": "AT-107",
+		"content": "[AT-107] Fix a11y role=button divs | Phase: 5 | Files: src/components/crm/lead-card.tsx, src/components/students/product-header.tsx",
+		"status": "completed",
+		"priority": "medium"
+	},
+	{
+		"id": "AT-107-A",
+		"content": "  ↳ [AT-107-A] Replace with <button type=\"button\"> + keyboard semantics",
+		"status": "completed",
+		"priority": "medium"
+	},
+	{
+		"id": "VT-001",
+		"content": "[VT-001] Build validation: bun run build",
+		"status": "completed",
+		"priority": "high"
+	},
+	{
+		"id": "VT-002",
+		"content": "[VT-002] Lint check: bun run lint:check",
+		"status": "completed",
+		"priority": "high"
+	},
+	{
+		"id": "VT-003",
+		"content": "[VT-003] Test suite: bun run test",
+		"status": "completed",
+		"priority": "high"
+	},
+	{
+		"id": "VT-004",
+		"content": "[VT-004] Security review: @code-reviewer validate implementation",
+		"status": "completed",
+		"priority": "high"
+	}
+]

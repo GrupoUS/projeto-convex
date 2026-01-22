@@ -1,0 +1,77 @@
+{
+	"$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
+	"google_auth": false,
+	"sisyphus_agent": {
+		"disabled": false,
+		"default_builder_enabled": false,
+		"planner_enabled": true,
+		"replace_plan": true
+	},
+	"fallback_agents": {
+		"apex-dev": {
+			"model": "github-copilot/gpt-5.2-codex",
+			"reasoningEffort": "high",
+			"path": "D:\\gpus\\.opencode\\agents\\apex-dev.md",
+			"specialization": "Full-stack implementation (Bun + Convex + TanStack Router)",
+			"priority": 10
+		},
+		"database-specialist": {
+			"model": "github-copilot/gpt-5.2-codex",
+			"reasoningEffort": "high",
+			"path": "D:\\gpus\\.opencode\\agents\\database-specialist.md",
+			"specialization": "Convex database schema, queries, mutations, real-time",
+			"priority": 9
+		},
+		"apex-ui-ux-designer": {
+			"model": "gemini-3-pro-high",
+			"path": "D:\\gpus\\.opencode\\agents\\apex-ui-ux-designer.md",
+			"specialization": "Shadcn/ui + Tailwind CSS v4 + WCAG 2.1 AA accessibility",
+			"priority": 8
+		},
+		"code-reviewer": {
+			"model": "github-copilot/gpt-5.2-codex",
+			"reasoningEffort": "high",
+			"path": "D:\\gpus\\.opencode\\agents\\code-reviewer.md",
+			"specialization": "OWASP Top 10, Brazilian LGPD compliance, security review",
+			"priority": 9
+		},
+		"architect-reviewer": {
+			"model": "github-copilot/gpt-5.2-codex",
+			"reasoningEffort": "high",
+			"path": "D:\\gpus\\.opencode\\agents\\architect-reviewer.md",
+			"specialization": "System design validation, scalability, architecture patterns",
+			"priority": 8
+		},
+		"apex-researcher": {
+			"model": "github-copilot/claude-opus-4.5",
+			"path": "D:\\gpus\\.opencode\\agents\\apex-researcher.md",
+			"specialization": "Multi-source research, documentation search, best practices",
+			"priority": 9
+		}
+	},
+	"agents": {
+		"Sisyphus": {
+			"model": "openai/gpt-5.2-codex",
+			"reasoningEffort": "high"
+		},
+		"Prometheus (Planner)": {
+			"model": "openai/gpt-5.2-codex",
+			"reasoningEffort": "high"
+		},
+		"librarian": {
+			"model": "opencode/glm-4.7-free"
+		},
+		"explore": {
+			"model": "google/antigravity-gemini-3-flash"
+		},
+		"frontend-ui-ux-engineer": {
+			"model": "google/antigravity-gemini-3-pro-high"
+		},
+		"document-writer": {
+			"model": "google/antigravity-gemini-3-flash"
+		},
+		"multimodal-looker": {
+			"model": "google/antigravity-gemini-3-flash"
+		}
+	}
+}

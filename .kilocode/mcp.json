@@ -1,0 +1,29 @@
+{
+	"mcpServers": {
+		"serena": {
+			"command": "uvx",
+			"args": [
+				"--from",
+				"git+https://github.com/oraios/serena",
+				"serena",
+				"start-mcp-server",
+				"--context",
+				"ide-assistant",
+				"--project-from-cwd"
+			]
+		},
+		"sequentialthinking": {
+			"command": "bunx",
+			"args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+		},
+		"context7": {
+			"command": "bunx",
+			"args": [
+				"-y",
+				"@upstash/context7-mcp",
+				"--api-key",
+				"ctx7sk-829c5209-a94f-471e-ba4f-6172b1a4db8e"
+			]
+		}
+	}
+}

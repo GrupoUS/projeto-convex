@@ -1,0 +1,78 @@
+{
+	"feature": "asaas-import-fixes",
+	"status": "in_progress",
+	"session_id": "ses_4a5d4bd9bffe3PP0Nu3Pm9tgm5",
+	"tasks": [
+		{
+			"id": "AT-001",
+			"title": "Add cpfHash field to students table and create index",
+			"phase": 1,
+			"status": "completed"
+		},
+		{
+			"id": "AT-002",
+			"title": "Implement blind index hash generation in encryption utility",
+			"phase": 1,
+			"status": "completed"
+		},
+		{
+			"id": "AT-003",
+			"title": "Create script/migration to backfill cpfHash for existing students",
+			"phase": 1,
+			"status": "completed"
+		},
+		{
+			"id": "AT-004",
+			"title": "Refactor student deduplication to use cpfHash index",
+			"phase": 2,
+			"status": "completed"
+		},
+		{
+			"id": "AT-005",
+			"title": "Update Asaas import logic to capture installment/parcel data",
+			"phase": 2,
+			"status": "completed"
+		},
+		{
+			"id": "AT-006",
+			"title": "Implement strict CPF normalization in lib/asaas.ts",
+			"phase": 2,
+			"status": "completed"
+		},
+		{
+			"id": "AT-007",
+			"title": "Implement automatic payment-to-enrollment linking logic",
+			"phase": 3,
+			"status": "completed"
+		},
+		{
+			"id": "AT-008",
+			"title": "Create persistent table for financial metrics persistence",
+			"phase": 3,
+			"status": "completed"
+		},
+		{
+			"id": "AT-009",
+			"title": "Update import UI with progress feedback and error summaries",
+			"phase": 4,
+			"status": "pending"
+		},
+		{
+			"id": "VT-001",
+			"title": "Build validation: bun run build",
+			"phase": 5,
+			"status": "pending"
+		},
+		{
+			"id": "VT-002",
+			"title": "Lint validation: bun run lint:check",
+			"phase": 5,
+			"status": "pending"
+		}
+	],
+	"next_steps": [
+		"Execute backfill migration",
+		"Update UI dashboard to use financialMetrics table",
+		"Final build and lint verification"
+	]
+}

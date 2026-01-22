@@ -1,0 +1,74 @@
+{
+	"permissions": {
+		"allow": [
+			"mcp__web-reader__webReader",
+			"Bash(dir:*)",
+			"Bash(findstr:*)",
+			"Bash(claude mcp list:*)",
+			"Bash(cmd /c \"dir /b C:\\\\Users\\\\Mauri\\\\.claude* 2>nul\")",
+			"Bash(powershell:*)",
+			"mcp__plugin_serena_serena__find_file",
+			"mcp__plugin_serena_serena__activate_project",
+			"mcp__plugin_serena_serena__list_dir",
+			"Skill(glm-plan-usage:usage-query-skill)",
+			"Bash(where:*)",
+			"Bash(winget install:*)",
+			"Bash(gh auth status:*)",
+			"Bash(powershell.exe:*)",
+			"Bash(cmd /c \"where gh.exe\")",
+			"Bash(cmd /c \"dir /s /b \"\"C:\\\\Program Files\\\\*gh.exe\"\" 2>nul\")",
+			"Bash(cmd /c \"dir /s /b \"\"C:\\\\Users\\\\Mauri\\\\AppData\\\\Local\\\\GitHub\\\\*gh.exe\"\" 2>nul & dir /s /b \"\"C:\\\\Program Files\\\\GitHub\\\\*gh.exe\"\" 2>nul\")",
+			"Skill(qa)",
+			"Bash(bun run lint:*)",
+			"Bash(bun run build)",
+			"Bash(\"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" --version)",
+			"Bash(\"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" auth status)",
+			"Bash(bun run test:coverage)",
+			"Bash(\"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" auth login:*)",
+			"Bash(railway status:*)",
+			"Bash(bunx convex deploy:*)",
+			"Bash(railway logs:*)",
+			"Bash(bunx convex logs:*)",
+			"Bash(\"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" pr list --state open --limit 10)",
+			"Bash(\"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\" repo view --json name,owner)",
+			"Bash(\"C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe\":*)",
+			"mcp__sequential-thinking__sequentialthinking",
+			"Bash(cd:*)",
+			"Bash(bun run dev:*)",
+			"Bash(timeout:*)",
+			"Bash(exit:*)",
+			"Bash(start http://localhost:3000)",
+			"Bash(bun run test tests/unit/asaas/ tests/helpers/)",
+			"Bash(bun run test)",
+			"Bash(python:*)",
+			"Bash(py:*)",
+			"Bash(bun run test import-workers.test.ts)",
+			"Bash(bun run test:*)",
+			"Bash(git branch:*)",
+			"Bash(npx convex dev:*)",
+			"Bash(npx convex typegen:*)",
+			"Bash(npx convex codegen:*)",
+			"Bash(bun run lint:check:*)",
+			"Bash(bun run lint:fix:*)",
+			"Bash(bun run format:*)",
+			"Bash(bun pm:*)",
+			"Bash(npm uninstall:*)",
+			"Bash(claude:*)"
+		]
+	},
+	"enableAllProjectMcpServers": true,
+	"hooks": {
+		"SessionStart": [
+			{
+				"matcher": "startup|resume",
+				"hooks": [
+					{
+						"type": "command",
+						"command": "python -c \"import json, sys, os; agents_content = open('AGENTS.md', 'r').read() if os.path.exists('AGENTS.md') else ''; output = {'hookSpecificOutput': {'hookEventName': 'SessionStart', 'additionalContext': agents_content}}; print(json.dumps(output))\"",
+						"timeout": 30
+					}
+				]
+			}
+		]
+	}
+}
